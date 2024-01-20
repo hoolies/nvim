@@ -14,6 +14,7 @@ opt.showmode = false
 
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
+opt.cursorcolumn = true
 
 -- Indenting
 opt.expandtab = true
@@ -29,8 +30,10 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
-opt.numberwidth = 2
-opt.ruler = false
+opt.numberwidth = 3
+opt.ruler = true
+opt.relativenumber = true
+
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -40,10 +43,19 @@ opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 400
+
+-- Undo
 opt.undofile = true
+opt.undolevels = 1000
+opt.undoreload = 1000
+opt.undodir = '/home/hoolies/.config/nvim/undodir'
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
+
+-- Various
+opt.spell = true
+opt.showtabline = 0
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
