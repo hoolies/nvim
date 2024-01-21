@@ -270,6 +270,17 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
