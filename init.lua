@@ -1,4 +1,3 @@
-`
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local lazyIsInstalled = vim.loop.fs_stat(lazypath)
 if not lazyIsInstalled then
