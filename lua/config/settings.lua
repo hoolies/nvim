@@ -1,21 +1,27 @@
 ----------------------------------=={ Setup Local }==-------------------------------
-local opt = vim.wo                                     -- Set opt as vim.wo, cause lazy again
-local set = vim.opt		                       -- Set set as vim.opt, cause lazy
+local opt = vim.wo
+local set = vim.opt
 
 
-----------------------------------=={  Settings   }==-------------------------------
+----------------------------------=={   Settings   }==------------------------------
 
 
 -- Behavior
-set.autoindent = true                                  -- Auto indent lines
+set.autoindent = true
 set.scrolloff = 5
 set.showmatch = true
+set.splitright = true
+set.splitbelow = true
+set.autochdir = true
+set.iskeyword = "-"
+set.modifiable = true
+set.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 
 -- Buffer
-set.autoread = true                                    -- Automatically update file
-set.hidden = true                                      -- Enable background buffers
-set.updatetime = 250                                   -- Automatically update 
+set.autoread = true
+set.hidden = true
+set.updatetime = 250
 
 
 -- Copy to clipboard
@@ -28,50 +34,55 @@ set.cursorline = true
 
 
 -- Highlights
-vim.cmd[[highlight LineNr guifg=#29465B]]              -- The Numbers on the left
-vim.cmd[[highlight CursorColumn guifg=#737CA1]]        -- The cursorcolumn color
-vim.cmd[[highlight CursorLine guifg=#737CA1]]          -- The cursorline color
-vim.cmd[[highlight CursorLineNr guifg=#FF00FF]]        -- The number of actual line
+vim.cmd[[highlight LineNr guifg=#29465B]]
+vim.cmd[[highlight CursorColumn guifg=#737CA1]]
+vim.cmd[[highlight CursorLine guifg=#737CA1]]
+vim.cmd[[highlight CursorLineNr guifg=#FF00FF]]
 
 
 -- Line wraps
 set.wrapscan = true
-opt.wrap = true                               	       -- Wrap the line
+opt.wrap = true
 opt.linebreak = true
 opt.list = false
 
 
 -- Number column
-set.number = true	        	                -- Set the number
-set.numberwidth = 5                                     -- Width of the number on the left
-set.relativenumber = true	                        -- Set relative numbers
-set.ruler = true                                        --
-opt.colorcolumn = '0'                                	--
+opt.colorcolumn = '0'
+set.number = true
+set.numberwidth = 5
+set.relativenumber = true
+set.ruler = true
+set.signcolumn = "yes"
 
 
 -- Search
-set.hlsearch = true                                     -- Highlight search
-set.incsearch = true                                    -- Set incremental
+set.hlsearch = true
+set.ignorecase = true
+set.incsearch = true
+set.smartcase = true
 
 
--- Tabs
-set.expandtab = true                                    -- Use Spaces instead of tabs
-set.shiftwidth = 4                                      -- Round Indent
-set.softtabstop = 4
-set.tabstop = 4     		      	                -- Tab space
-
+-- Tabs / Identation
+set.expandtab = true
+set.shiftwidth = 2
+set.smartindent = true
+set.softtabstop = 2
+set.tabstop = 2
+set.wrap = false
 
 -- Undo history settings
+set.undodir = '/home/hoolies/.config/nvim/undodir'
 set.undofile = true
 set.undolevels = 1000
 set.undoreload = 1000
-set.undodir = '/home/hoolies/.config/nvim/undodir'
 
 
 -- Various
-set.spell = true
-set.visualbell = true
 set.fileencoding = 'utf-8'
-set.termguicolors = true
 set.showmode = true
 set.showtabline = 0
+set.spell = true
+set.termguicolors = true
+set.visualbell = true
+set.completeopt = "menuone,noinsert,noselect"
