@@ -72,7 +72,10 @@ map('n', '<C-t>', ':terminal<CR>')      -- open
 map('t', '<Esc>', '<C-d>')              -- exit
 
 -- Toggle the undotree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+map('n', '<leader>u', ':UndotreeToggle<CR>')
+
+-- Lazy git
+map('n', '<leader>lg', ':LazyGit<CR>')
 
 -- Indentation
 map("v", "<", "<gv")
