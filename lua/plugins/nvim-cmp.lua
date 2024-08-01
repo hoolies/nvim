@@ -10,7 +10,7 @@ local M = {
     {
       "L3MON4D3/LuaSnip",
       dependencies = {
-        "rafamadriz/friendly-snippets"
+        "rafamadriz/friendly-snippets",
       },
     },
 	},
@@ -18,7 +18,11 @@ local M = {
 
 M.config = function()
 	local cmp = require("cmp")
-	vim.opt.completeopt = { "menu", "menuone", "noselect" }
+	vim.opt.completeopt = {
+    "menu",
+    "menuone",
+    "noselect",
+  }
 
 	cmp.setup({
 		snippet = {

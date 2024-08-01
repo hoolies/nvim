@@ -54,8 +54,14 @@ map('t', '<Esc>', '<C-d>')              -- exit
 -- Toggle the undotree
 map('n', '<leader>u', ':UndotreeToggle<CR>')
 
+-- Oil
+map('n', '<leader>0', ':Oil<CR>')
+
 -- Toggle the minimap
 map('n', '<leader>m', ':MinimapToggle<CR>')
+
+-- Glow MarkDown
+map('n', '<leader>M', ':Glow<CR>')
 
 -- Lazy git
 map('n', '<leader>lg', ':LazyGit<CR>')
