@@ -8,7 +8,6 @@ local opts = {
 		"html",
 		"jsonls",
 		"lua_ls",
-    "nextls",
 		"pyright",
 		"solidity",
 		"tailwindcss",
