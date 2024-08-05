@@ -31,7 +31,7 @@ local opts = {
   },
   -- leave nil when passing the spec as the first argument to setup()
   spec = nil, ---@type LazySpec
-  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
+  lockfile = vim.fn.expand("$XDG_CONFIG_HOME") .. "/nvim/lua", -- lockfile generated after running update.
   ---@type number? limit the maximum amount of concurrent tasks
   concurrency = jit.os:find("Windows") and (vim.uv.available_parallelism() * 2) or nil,
   git = {
