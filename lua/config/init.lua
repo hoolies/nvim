@@ -17,7 +17,7 @@ require('config.keybindings')
 require('config.settings')
 
 -- Load Lazy
-require("lazy").setup('plugins', opts)
+ require("lazy").setup('plugins', opts)
 
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
