@@ -60,8 +60,6 @@ map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
 map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
 map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 
--- Open NeoTree
-map('n', '<leader>e', ':Neotree toggle<CR>')
 
 -- Toggle the undotre
 map('n', '<leader>u', ':UndotreeToggle<CR>')
@@ -75,6 +73,7 @@ map('n', '<leader>v', ':vsplit <CR> :terminal<CR> a')
 
 -- Oil
 map('n', '<leader>0', ':Oil<CR>')
+map('n', '<leader>e', ':Oil --float<CR><C-p><CR>')
 
 -- Toggle the minimap
 map('n', '<leader>m', ':MinimapToggle<CR>')
