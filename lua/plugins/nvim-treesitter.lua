@@ -2,6 +2,10 @@ local config = function()
 	require("nvim-treesitter.configs").setup({
 		indent = {
 			enable = true,
+      disable = {
+        "python",
+        "go",
+      },
 		},
 		autotag = {
 			enable = true,

@@ -20,10 +20,10 @@ vim.g.maplocalleader = ' '
 -----------------------------------------------------------
 
 -- Disable arrow keys
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<left>', '<nop>')
-map('', '<right>', '<nop>')
+map('n', '<up>', '<nop>')
+map('n', '<down>', '<nop>')
+map('n', '<left>', '<nop>')
+map('n', '<right>', '<nop>')
 
 -- Navigate in Insert Mode 
 map('i', '<C-h>', '<Left>')
@@ -31,25 +31,28 @@ map('i', '<C-j>', '<Down>')
 map('i', '<C-k>', '<Up>')
 map('i', '<C-l>', '<Right>')
 
--- Navigate in Command mode
-map('c', '<C-h>', '<Left>')
-map('c', '<C-j>', '<Down>')
-map('c', '<C-k>', '<Up>')
-map('c', '<C-l>', '<Right>')
+-- Navigate in Terminal
+map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
+map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
+map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
+map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 
 -- Open NeoTree
 map('n', '<leader>e', ':Neotree toggle<CR>')
 
--- Moving between buffers
-map('n', '<S-bs>', ':bp<CR>', {silent = true, noremap = true})    -- go to previous buffer')
-map('n', '<bs>', ':bn<CR>', {silent = true, noremap = true})  -- go to next buffer')
-
 -- Clear search highlighting with <leader> and c
 map('n', '<leader><Esc>', ':nohl<CR>')
 
+-- Buffer manipulation
+map('n', '<leader>bj', ':bnext<CR>')
+map('n', '<leader>bk', ':bprevious<CR>')
+map('n', '<leader>bd', ':bdelete<CR>')
+map('n', '<leader>bw', ':bwipeout<CR>')
+map('n', '<leader>bb', ':buffers<CR>')
+
 -- Terminal mappings
-map('n', '<C-t>', ':terminal<CR>')      -- open
-map('t', '<Esc>', '<C-d>')              -- exit
+map('n', '<leader>h', ':split <CR> :resize -10<CR> :terminal<CR> a')
+map('n', '<leader>v', ':vsplit <CR> :terminal<CR> a')
 
 -- Toggle the undotree
 map('n', '<leader>u', ':UndotreeToggle<CR>')
