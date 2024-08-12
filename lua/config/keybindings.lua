@@ -25,11 +25,40 @@ map('n', '<down>', '<nop>')
 map('n', '<left>', '<nop>')
 map('n', '<right>', '<nop>')
 
+-- Resize window using <ctrl> arrow keys
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- better up/down
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+
 -- Navigate in Insert Mode 
 map('i', '<C-h>', '<Left>')
 map('i', '<C-j>', '<Down>')
 map('i', '<C-k>', '<Up>')
 map('i', '<C-l>', '<Right>')
+map('i', 'jk', '<Esc>')
+
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+
+-- Buffer manipulation
+map('n', '<leader>bj', ':bnext<CR>')
+map('n', '<leader>bk', ':bprevious<CR>')
+map('n', '<leader>bd', ':bdelete<CR>')
+map('n', '<leader>bD', ':bdelete<CR>:q!')
+map('n', '<leader>bw', ':bwipeout<CR>')
+map('n', '<leader>bb', ':enew<CR>')
 
 -- Navigate in Terminal
 map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
@@ -40,22 +69,15 @@ map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 -- Open NeoTree
 map('n', '<leader>e', ':Neotree toggle<CR>')
 
--- Clear search highlighting with <leader> and c
-map('n', '<leader><Esc>', ':nohl<CR>')
+-- Toggle the undotre
+map('n', '<leader>u', ':UndotreeToggle<CR>')
 
--- Buffer manipulation
-map('n', '<leader>bj', ':bnext<CR>')
-map('n', '<leader>bk', ':bprevious<CR>')
-map('n', '<leader>bd', ':bdelete<CR>')
-map('n', '<leader>bw', ':bwipeout<CR>')
-map('n', '<leader>bb', ':buffers<CR>')
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
 -- Terminal mappings
 map('n', '<leader>h', ':split <CR> :resize -10<CR> :terminal<CR> a')
 map('n', '<leader>v', ':vsplit <CR> :terminal<CR> a')
-
--- Toggle the undotree
-map('n', '<leader>u', ':UndotreeToggle<CR>')
 
 -- Oil
 map('n', '<leader>0', ':Oil<CR>')
@@ -66,13 +88,6 @@ map('n', '<leader>m', ':MinimapToggle<CR>')
 -- Glow MarkDown
 map('n', '<leader>M', ':Glow<CR>')
 
--- Lazy git
-map('n', '<leader>lg', ':LazyGit<CR>')
-
 -- Indentation
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-
--- Comments 
-map("n", "<C-_>", "gcc", { noremap = false})
-map("v", "<C-_>", "gcc", { noremap = false})
