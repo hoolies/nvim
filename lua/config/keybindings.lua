@@ -36,7 +36,7 @@ map('i', '<C-h>', '<Left>')
 map('i', '<C-j>', '<Down>')
 map('i', '<C-k>', '<Up>')
 map('i', '<C-l>', '<Right>')
-map('i', 'jk', '<Esc>')
+map('i', 'jj', '<Esc>')
 
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
@@ -53,6 +53,7 @@ map('n', '<leader>bd', ':bdelete<CR>')
 map('n', '<leader>bD', ':bdelete<CR>:q!')
 map('n', '<leader>bw', ':bwipeout<CR>')
 map('n', '<leader>bb', ':enew<CR>')
+map("n", "<A-ESC>", ":%bd|e#|bd# <CR>")
 
 -- Navigate in Terminal
 map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
@@ -73,7 +74,7 @@ map('n', '<leader>v', ':vsplit <CR> :terminal<CR> a')
 
 -- Oil
 map('n', '<leader>0', ':Oil<CR>')
-map('n', '<leader>e', ':Oil --float<CR><C-p><CR>')
+map('n', '<leader>e', ':Oil --float<CR>')
 
 -- Toggle the minimap
 map('n', '<leader>m', ':MinimapToggle<CR>')
