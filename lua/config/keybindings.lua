@@ -47,13 +47,13 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 -- Buffer manipulation
-map('n', '<leader>bj', ':bnext<CR>')
-map('n', '<leader>bk', ':bprevious<CR>')
-map('n', '<leader>bd', ':bdelete<CR>')
-map('n', '<leader>bD', ':bdelete<CR>:q!')
-map('n', '<leader>bw', ':bwipeout<CR>')
-map('n', '<leader>bb', ':enew<CR>')
-map("n", "<A-ESC>", ":%bd|e#|bd# <CR>")
+map('n', '<leader>bj', ':bnext<CR>', { desc = "Next Buffer" })
+map('n', '<leader>bk', ':bprevious<CR>', { desc = "Previous Buffer" })
+map('n', '<leader>bd', ':bdelete<CR>', { desc = "Delete Buffer" })
+map('n', '<leader>bD', ':bdelete<CR>:q!', { desc = "Delete Buffer & Close Window" })
+map('n', '<leader>bw', ':bwipeout<CR>', { desc = "Wipeout Buffer" })
+map('n', '<leader>bb', ':enew<CR>', { desc = "New Window & Buffer" })
+map("n", "<A-ESC>", ":%bd|e#|bd# <CR>", { desc = "Delete all buffer except current" })
 
 -- Navigate in Terminal
 map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
@@ -63,24 +63,24 @@ map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 
 
 -- Toggle the undotre
-map('n', '<leader>u', ':UndotreeToggle<CR>')
+map('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Opens UndoTree" })
 
 -- Clear search with <esc>
 map( "n", "<Esc>", "<cmd>nohl<cr>", { desc = "Escape and Clear hlsearch" })
 
 -- Terminal mappings
-map('n', '<leader>h', ':split <CR> :resize -10<CR> :terminal<CR> a')
-map('n', '<leader>v', ':vsplit <CR> :terminal<CR> a')
+map('n', '<leader>th', ':split <CR> :resize -10<CR> :terminal<CR> a', { desc = "Opens terminal in a buffer horizontaly" })
+map('n', '<leader>tv', ':vsplit <CR> :terminal<CR> a', { desc = "Opens terminal vertically in split screen" })
 
 -- Oil
-map('n', '<leader>0', ':Oil<CR>')
-map('n', '<leader>e', ':Oil --float<CR>')
+map('n', '<leader>0', ':Oil<CR>', { desc = "Opens Oil in a new buffer" })
+map('n', '<leader>e', ':Oil --float<CR>', { desc = "Opens Oil in floating mode" })
 
 -- Toggle the minimap
-map('n', '<leader>m', ':MinimapToggle<CR>')
+map('n', '<leader>m', ':MinimapToggle<CR>', { desc = "Toggles MiniMap" })
 
 -- Glow MarkDown
-map('n', '<leader>M', ':Glow<CR>')
+map('n', '<leader>M', ':Glow<CR>', { desc = "Activates MarkDown Rendering" })
 
 -- Indentation
 map("v", "<", "<gv")
