@@ -47,8 +47,8 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 -- Buffer manipulation
-map('n', '<leader>bj', ':bnext<CR>', { desc = "Next Buffer" })
-map('n', '<leader>bk', ':bprevious<CR>', { desc = "Previous Buffer" })
+map('n', '<leader>bl', ':bnext<CR>', { desc = "Next Buffer" })
+map('n', '<leader>bh', ':bprevious<CR>', { desc = "Previous Buffer" })
 map('n', '<leader>bd', ':bdelete<CR>', { desc = "Delete Buffer" })
 map('n', '<leader>bD', ':bdelete<CR>:q!', { desc = "Delete Buffer & Close Window" })
 map('n', '<leader>bw', ':bwipeout<CR>', { desc = "Wipeout Buffer" })

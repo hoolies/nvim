@@ -4,9 +4,9 @@ local config = function()
     defaults = {
       mappings = {
         i = {
-          ["<C-h>"] = "which_key",
-          ["<C-j>"] = "move_selection_next",
-          ["<C-k>"] = "move_selection_previous",
+          -- ["<C-h>"] = "which_key",
+          -- ["<C-j>"] = "move_selection_next",
+          -- ["<C-k>"] = "move_selection_previous",
         },
       },
     },
@@ -16,7 +16,7 @@ local config = function()
   end
 
 return {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
     lazy = true,
     dependencies = { 'nvim-lua/plenary.nvim' },

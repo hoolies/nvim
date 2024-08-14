@@ -13,6 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Imports configurations
+
+require('config.autocmds')
 require('config.keybindings')
 require('config.settings')
 
