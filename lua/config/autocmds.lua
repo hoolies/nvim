@@ -12,6 +12,12 @@ local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
 --   end,
 -- })
 
+-- Telescope at start
+autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("lua require 'telescope.builtin'.oldfiles{}")
+  end,
+})
 
 -- Highlight on Yank
 augroup('YankHighlightedText',{clear=true})

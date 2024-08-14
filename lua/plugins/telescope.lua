@@ -4,9 +4,9 @@ local config = function()
     defaults = {
       mappings = {
         i = {
-          -- ["<C-h>"] = "which_key",
-          -- ["<C-j>"] = "move_selection_next",
-          -- ["<C-k>"] = "move_selection_previous",
+          ["<C-h>"] = "which_key",
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
         },
       },
     },
@@ -31,7 +31,7 @@ return {
       vim.keymap.set('n', '<leader>fk', ":lua require 'telescope.builtin'.keymaps{}<CR>", { desc = "Show Keymaps" }),
       vim.keymap.set('n', '<leader>fo', ":lua require 'telescope.builtin'.oldfiles{}<CR>", { desc = "Old Files" }),
       vim.keymap.set('n', '<leader>fr', ":lua require 'telescope.builtin'.registers{}<CR>", { desc = "Show registers" }),
-      vim.keymap.set('n', '<leader>fs', ":lua require 'telescope.builtin'.grep_sting{}<CR>", { desc = "Search sting under cursor or selection" }),
+      vim.keymap.set('n', '<leader>fs', ":lua require 'telescope.builtin'.grep_string{}<CR>", { desc = "Search sting under cursor or selection" }),
       vim.keymap.set('n', '<leader>ft', ":lua require 'telescope.builtin'.treesitter{}<CR>", { desc = "Find Functions & Variables" }),
       vim.keymap.set('n', '<leader>fzh', ":lua require 'telescope.builtin'.command_history{}<CR>", { desc = "Show command history" }),
       vim.keymap.set('n', '<leader>fzq', ":lua require 'telescope.builtin'.quickfixhistory{}<CR>", { desc = "List all quickfix lists" }),
