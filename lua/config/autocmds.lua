@@ -44,3 +44,8 @@ autocmd('BufEnter', {
   pattern = '',
   command = 'set fo-=c fo-=r fo-=o'
 })
+
+-- Set what kind of ASCII characters are keywords
+autocmd("VimEnter", {
+  command = 'set iskeyword=@,48-57,192-255'
+})

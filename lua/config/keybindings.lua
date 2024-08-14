@@ -61,7 +61,6 @@ map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
 map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
 map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 
-
 -- Toggle the undotre
 map('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Opens UndoTree" })
 
