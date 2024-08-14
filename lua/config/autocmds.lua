@@ -15,7 +15,9 @@ local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
 -- Telescope at start
 autocmd("VimEnter", {
   callback = function()
-    vim.cmd("lua require 'telescope.builtin'.oldfiles{}")
+    if vim.fn.argv(0) == "" then
+      require("telescope.builtin").oldfiles()
+    end
   end,
 })
 
