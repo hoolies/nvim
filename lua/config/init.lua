@@ -48,6 +48,10 @@ local opts = {
     missing = true,
     colorscheme = { "tokyonight-storm"},
   },
+  -- Highlights
+  vim.cmd[[highlight LineNr guifg=#29465B]],               -- The Numbers on the left
+  vim.cmd[[highlight CursorColumn guifg=#737CA1]],         -- The cursorcolumn color
+  vim.cmd[[highlight CursorLineNr guifg=#FF00FF]],
   ui = {
     size = { width = 0.85, height = 0.85 },
     wrap = true,
