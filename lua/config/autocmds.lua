@@ -1,16 +1,8 @@
 --------------------------------------------------
--- AUTOCMDS
+-- AUTOCMDS --------------------------------------
 --------------------------------------------------
 local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
-
--- Transparency
--- autocmd("VimEnter", {
---   callback = function()
---     vim.cmd("hi! Normal guibg=NONE ctermbg=NONE")
---     vim.cmd("hi! NonText guibg=NONE ctermbg=NONE")
---   end,
--- })
 
 -- Telescope at start
 autocmd("VimEnter", {
@@ -45,7 +37,20 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+--------------------------------------------------
+-- DISABLED --------------------------------------
+--------------------------------------------------
+
+-- Transparency
+-- autocmd("VimEnter", {
+--   callback = function()
+--     vim.cmd("hi! Normal guibg=NONE ctermbg=NONE")
+--     vim.cmd("hi! NonText guibg=NONE ctermbg=NONE")
+--   end,
+-- })
+
 -- Set what kind of ASCII characters are keywords
-autocmd("VimEnter", {
-  command = 'set iskeyword=@,48-57,192-255'
-})
+-- autocmd("VimEnter", {
+--   command = 'set iskeyword=@,48-57,192-255'
+-- })
+
