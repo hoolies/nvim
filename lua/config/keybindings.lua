@@ -25,6 +25,10 @@ map('n', '<down>', '<nop>')
 map('n', '<left>', '<nop>')
 map('n', '<right>', '<nop>')
 
+-- Better Navigation, it is not required as long as scrolloff = 999
+-- map('n', 'j', 'jzz')
+-- map('n', 'k', 'kzz')
+
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
@@ -81,6 +85,6 @@ map('n', '<leader>m', ':MinimapToggle<CR>', { desc = "Toggles MiniMap" })
 -- Glow MarkDown
 map('n', '<leader>M', ':Glow<CR>', { desc = "Activates MarkDown Rendering" })
 
--- Indentation
-map("v", "A-h", "<gv")
-map("v", "A-l", ">gv")
+-- Indentation keep the selection
+map("v", "<", "<gv")
+map("v", ">", ">gv")

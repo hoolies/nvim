@@ -8,7 +8,7 @@ local set = vim.opt
 
 -- Behavior
 set.autoindent = true
-set.scrolloff = 5
+set.scrolloff = 999         -- Sets cursor always on the middle of the screen
 set.showmatch = true
 set.splitright = true
 set.splitbelow = true
