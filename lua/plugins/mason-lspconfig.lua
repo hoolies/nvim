@@ -11,7 +11,7 @@ local opts = {
 		"pyright",
 		"solidity",
 		"tailwindcss",
-		"tsserver",
+		"ts_ls",
 	},
 
 	automatic_installation = true,
