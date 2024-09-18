@@ -79,12 +79,6 @@ map('n', '<leader>tv', ':vsplit <CR> :terminal<CR> a', { desc = "Opens terminal 
 map('n', '<leader>0', ':Oil<CR>', { desc = "Opens Oil in a new buffer" })
 map('n', '<leader>e', ':Oil --float<CR>', { desc = "Opens Oil in floating mode" })
 
--- Toggle the minimap
-map('n', '<leader>m', ':MinimapToggle<CR>', { desc = "Toggles MiniMap" })
-
--- Glow MarkDown
-map('n', '<leader>M', ':Glow<CR>', { desc = "Activates MarkDown Rendering" })
-
 -- Indentation keep the selection
 map("v", "<", "<gv")
 map("v", ">", ">gv")
