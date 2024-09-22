@@ -40,6 +40,10 @@ autocmd('BufEnter', {
   command = 'set fo-=c fo-=r fo-=o'
 })
 
+-- You open the file at the point you where last
+autocmd("BufReadPost", {command="normal! g'\""})
+
+
 --------------------------------------------------
 -- DISABLED --------------------------------------
 --------------------------------------------------
