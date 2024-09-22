@@ -43,7 +43,6 @@ autocmd('BufEnter', {
 -- You open the file at the point you where last
 autocmd("BufReadPost", {command="normal! g'\""})
 
-
 --------------------------------------------------
 -- DISABLED --------------------------------------
 --------------------------------------------------
