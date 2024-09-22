@@ -36,19 +36,19 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Navigate in Insert Mode
-map('i', '<C-h>', '<Left>')
-map('i', '<C-j>', '<Down>')
 map('i', '<C-k>', '<Up>')
+map('i', '<C-j>', '<Down>')
+map('i', '<C-h>', '<Left>')
 map('i', '<C-l>', '<Right>')
 map('i', 'jj', '<Esc>')
 
 -- Move Lines
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 
 -- Buffer manipulation
 map('n', '<leader>bl', ':bnext<CR>', { desc = "Next Buffer" })
@@ -65,7 +65,7 @@ map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
 map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
 map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
 
--- Toggle the undotre
+-- Toggle the undotree
 map('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Opens UndoTree" })
 
 -- Clear search with <esc>
@@ -76,8 +76,13 @@ map('n', '<leader>th', ':split <CR> :resize -10<CR> :terminal<CR> a', { desc = "
 map('n', '<leader>tv', ':vsplit <CR> :terminal<CR> a', { desc = "Opens terminal vertically in split screen" })
 
 -- Oil
-map('n', '<leader>0', ':Oil<CR>', { desc = "Opens Oil in a new buffer" })
 map('n', '<leader>e', ':Oil --float<CR>', { desc = "Opens Oil in floating mode" })
+
+-- Replace the world under the cursor
+map("n", "<Leader>/", [[:%s/<C-r><C-w>//g<Left><Left>]])
+
+-- Delete without copying into register
+map('n', 'x', '"_x')
 
 -- Indentation keep the selection
 map("v", "<", "<gv")
