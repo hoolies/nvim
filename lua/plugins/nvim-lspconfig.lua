@@ -43,8 +43,12 @@ local config = function()
 
 	-- python
 	lspconfig.pyright.setup({
+    on_attach = on_attach,
 		capabilities = capabilities,
-		on_attach = on_attach,
+    before_init = function(_, config)
+      default_venv_path = path.join(vim.env.XDG_CONFIG_HOME, 'venv', 'nvim', 'bin', 'python')
+      config.settings.python.pythonPath = default_venv_path
+    end,
 		settings = {
 			pyright = {
 				disableOrganizeImports = false,
