@@ -46,7 +46,8 @@ local config = function()
     on_attach = on_attach,
 		capabilities = capabilities,
     before_init = function(_, config)
-      local default_venv_path = "$HOME/venv/nvim/bin/python"
+      local home = os.getenv( "HOME" )
+      local default_venv_path = home .. "/venv/nvim/bin/python"
       config.settings.python.pythonPath = default_venv_path
     end,
 	})
