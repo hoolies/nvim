@@ -64,6 +64,7 @@ map('t', '<C-h>', '<C-\\><C-n><C-w><C-h>')
 map('t', '<C-j>', '<C-\\><C-n><C-w><C-j>')
 map('t', '<C-k>', '<C-\\><C-n><C-w><C-k>')
 map('t', '<C-l>', '<C-\\><C-n><C-w><C-l>')
+map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Toggle the undotree
 map('n', '<leader>u', ':UndotreeToggle<CR>', { desc = "Opens UndoTree" })
