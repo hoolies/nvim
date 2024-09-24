@@ -1,10 +1,12 @@
 local opts = {
 	ensure_installed = {
 		"bashls",
+    "black",
 		"cssls",
 		"efm",
     "elixirls",
 		"emmet_ls",
+    "flake8",
 		"html",
 		"jsonls",
 		"lua_ls",
