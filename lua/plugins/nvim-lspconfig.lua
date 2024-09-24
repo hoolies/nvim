@@ -27,7 +27,7 @@ local config = function()
 					-- make language server aware of runtime files
 					library = {
 						vim.fn.expand("$VIMRUNTIME/lua"),
-            vim.fn.expand("$XDG_CONFIG_HOME") .. "/nvim/lua",
+            vim.fn.expand("$HOME") .. "/nvim/lua",
 					},
 				},
 			},
@@ -46,20 +46,9 @@ local config = function()
     on_attach = on_attach,
 		capabilities = capabilities,
     before_init = function(_, config)
-      default_venv_path = path.join(vim.env.XDG_CONFIG_HOME, 'venv', 'nvim', 'bin', 'python')
+      local default_venv_path = "$HOME/venv/nvim/bin/python"
       config.settings.python.pythonPath = default_venv_path
     end,
-		settings = {
-			pyright = {
-				disableOrganizeImports = false,
-				analysis = {
-					useLibraryCodeForTypes = true,
-					autoSearchPaths = true,
-					diagnosticMode = "workspace",
-					autoImportCompletions = true,
-				},
-			},
-		},
 	})
 
 	-- typescript
