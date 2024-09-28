@@ -28,8 +28,7 @@ augroup('YankHighlightedText',{clear=true})
 autocmd({
   'BufWritePre',
   'BufEnter',
-},
-{
+  }, {
   pattern = '',
   command = ":%s/\\s\\+$//e"
 })
@@ -42,6 +41,9 @@ autocmd('BufEnter', {
 
 -- You open the file at the point you where last
 autocmd("BufReadPost", {command="normal! g'\""})
+
+-- Turn off relative numbers to terminal
+autocmd("TermOpen", { command = "setlocal listchars= nonumber norelativenumber" })
 
 --------------------------------------------------
 -- DISABLED --------------------------------------
@@ -59,4 +61,3 @@ autocmd("BufReadPost", {command="normal! g'\""})
 -- autocmd("VimEnter", {
 --   command = 'set iskeyword=@,48-57,192-255'
 -- })
-

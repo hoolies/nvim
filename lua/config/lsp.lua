@@ -2,6 +2,7 @@ local vim_modes = {
 	n = "n",
 	i = "i",
 	v = "v",
+  x = "x",
 }
 
 local default_opts = {
