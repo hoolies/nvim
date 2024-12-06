@@ -45,6 +45,16 @@ autocmd("BufReadPost", {command="normal! g'\""})
 -- Turn off relative numbers to terminal
 autocmd("TermOpen", { command = "setlocal listchars= nonumber norelativenumber" })
 
+-- Turn off relative numbers to oil buffers
+autocmd("FileType", {
+  pattern = "oil",
+  callback = function ()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
+})
+
+
 --------------------------------------------------
 -- DISABLED --------------------------------------
 --------------------------------------------------
