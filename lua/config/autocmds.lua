@@ -22,7 +22,7 @@ augroup('YankHighlightedText',{clear=true})
     callback = function()
       vim.highlight.on_yank({ higroup='Search', timeout = 300 })
     end
-  })
+})
 
 -- Remove whitespace on save
 autocmd({
