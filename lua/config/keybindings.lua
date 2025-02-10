@@ -80,9 +80,13 @@ map('n', '<leader>e', ':Oil --float<CR>', { desc = "Opens Oil in floating mode" 
 
 -- Replace the world under the cursor
 map("n", "<Leader>/", [[:%s/<C-r><C-w>//g<Left><Left>]])
+map("v", "<Leader>/", [[:%s/<C-r><C-w>//g<Left><Left>]])
 
 -- Delete without copying into register
 map('n', 'x', '"_x')
+map('v', 'x', '"_x')
+map('n', 'dd', '"_dd')
+map('n', 'dd', '"_dd')
 
 -- Indentation keep the selection
 map("v", "<", "<gv")
