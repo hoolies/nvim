@@ -1,63 +1,117 @@
--- LSP servers and clients communicate which features they support through "capabilities".
---  By default, Neovim supports a subset of the LSP specification.
---  With blink.cmp, Neovim has *more* capabilities which are communicated to the LSP servers.
---  Explanation from TJ: https://youtu.be/m8C0Cq9Uv9o?t=1275
---
--- This can vary by config, but in general for nvim-lspconfig:
+return  { 'neovim/nvim-lspconfig', config = function()
 
-return {
-  'neovim/nvim-lspconfig',
-  dependencies = { 'saghen/blink.cmp' },
-
-  -- example using `opts` for defining servers
-  opts = {
-    servers = {
-      lua_ls = {}
-    }
-  },
-  config = function(_, opts)
-    local lspconfig = require('lspconfig')
-    for server, config in pairs(opts.servers) do
-      -- passing config.capabilities to blink.cmp merges with the capabilities in your
-      -- `opts[server].capabilities, if you've defined it
-      config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup(config)
-    end
-  end
-
- -- example calling setup directly for each LSP
-  config = function()
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconfig = require('lspconfig')
 
-    lspconfig['lua_ls'].setup({ capabilities = capabilities }),
-    lspconfig.rust_analyzer.setup {
+    -- Python (pyright)
+    lspconfig.pyright.setup({
       settings = {
-        ['rust-analyzer'] = {},
-    },
-    lspconfig.pyright.setup {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            useLibraryCodeForTypes = true,
+          },
+        },
+      },
+    })
+
+    -- Lua (lua_ls)
+    lspconfig.lua_ls.setup({
       settings = {
-        ['pyright'] = {},
-    },
-    lspconfig.grammarly.setup {
+        Lua = {
+          runtime = {
+            version = 'LuaJIT',
+            path = vim.split(package.path, ';'),
+          },
+          diagnostics = {
+            globals = {'vim'},
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file('', true),
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+    })
+
+    -- Go (gopls)
+    lspconfig.gopls.setup({
       settings = {
-        ['grammarly'] = {},
-    },
-    lspconfig.bashls.setup {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+        },
+      },
+    })
+
+    -- Rust (rust_analyzer)
+    lspconfig.rust_analyzer.setup({
       settings = {
-        ['bashls'] = {},
-    },
-    lspconfig.elixirls.setup {
+        ["rust-analyzer"] = {
+          cargo = {
+            loadOutDirsFromCheck = true,
+          },
+          procMacro = {
+            enable = true,
+          },
+        },
+      },
+    })
+
+    -- C (clangd)
+    lspconfig.clangd.setup({})
+
+    -- JavaScript/TypeScript (ts_ls)
+    lspconfig.ts_ls.setup({
       settings = {
-        ['elixirLS'] = {},
-    },
-    lspconfig.html.setup {
+        javascript = {
+          format = { enable = true },
+        },
+        typescript = {
+          format = { enable = true },
+        },
+      },
+    })
+
+    -- HTML (html)
+    lspconfig.html.setup({})
+
+    -- CSS (cssls)
+    lspconfig.cssls.setup({})
+
+    -- Bash (bashls)
+    lspconfig.bashls.setup({
       settings = {
-        ['html'] = {},
-    },
-    lspconfig.cssls.setup {
+        bash = {
+          enable = true,
+        },
+      },
+    })
+
+    -- PowerShell (powershell_es)
+    lspconfig.powershell_es.setup({
       settings = {
-        ['cssls'] = {}
-    },
+        powershell = {
+          scriptAnalysis = {
+            enable = true,
+          },
+        },
+      },
+    })
+
+    -- Elixir (elixirls)
+    lspconfig.elixirls.setup({
+      settings = {
+        elixirLS = {
+          dialyzerEnabled = true,
+          fetchDeps = true,
+          enableTestLenses = true,
+        },
+      },
+    })
+
   end
 }

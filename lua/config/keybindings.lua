@@ -13,7 +13,7 @@ end
 -- Change leader to spacebar
 map('', '<SPACE>', '<nop>')
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = '\\'
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -51,8 +51,8 @@ map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 
 -- Buffer manipulation
-map('n', '<leader>bl', ':bnext<CR>', { desc = "Next Buffer" })
-map('n', '<leader>bh', ':bprevious<CR>', { desc = "Previous Buffer" })
+map('n', '<S-h>', ':bnext<CR>', { desc = "Next Buffer" })
+map('n', '<S-l>', ':bprevious<CR>', { desc = "Previous Buffer" })
 map('n', '<leader>bd', ':bdelete<CR>', { desc = "Delete Buffer" })
 map('n', '<leader>bD', ':bdelete<CR>:q!', { desc = "Delete Buffer & Close Window" })
 map('n', '<leader>bw', ':bwipeout<CR>', { desc = "Wipeout Buffer" })
@@ -91,3 +91,13 @@ map('n', 'dd', '"_dd')
 -- Indentation keep the selection
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- native snippets. only needed on < 0.11, as 0.11 creates these by default
+-- if vim.fn.has("nvim-0.11") == 0 then
+--   map("s", "<Tab>", function()
+--     return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
+--   end, { expr = true, desc = "Jump Next" })
+--   map({ "i", "s" }, "<S-Tab>", function()
+--     return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
+--   end, { expr = true, desc = "Jump Previous" })
+-- end

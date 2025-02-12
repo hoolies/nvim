@@ -26,7 +26,7 @@ return {
         "sqlls",
         "tailwindcss",
         "terraformls",
-        -- "pyright",
+        "pyright",
       },
     })
   end,
