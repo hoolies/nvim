@@ -64,6 +64,15 @@ autocmd("FileType", {
   end,
 })
 
+-- Turn off relative numbers to oil buffers
+autocmd("BufEnter", {
+  pattern = "",
+  callback = function ()
+    vim.wo.number = true
+    vim.wo.relativenumber = true
+  end,
+})
+
 -- close some filetypes with <q>
 -- autocmd("FileType", {
 --   group = augroup("close_with_q"),
