@@ -48,11 +48,6 @@ local opts = {
     missing = true,
     colorscheme = { "tokyonight-storm"},
   },
-  -- Custom colors
-  vim.cmd[[highlight LineNr guifg=#29465B]],
-  vim.cmd[[highlight CursorColumn guifg=#737CA1]],
-  vim.cmd[[highlight CursorLineNr guifg=#FF00FF]],
-  vim.cmd[[highlight IncSearch guibg=#FF00FF]],
   ui = {
     size = { width = 0.85, height = 0.85 },
     wrap = true,
