@@ -1,2 +1,2 @@
 ## About
-Misarable attempt to setup NeoVim in a modular way
+Miserable attempt to setup NeoVim in a modular way

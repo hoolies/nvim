@@ -16,16 +16,6 @@ autocmd("VimEnter", {
   end,
 })
 
--- Check if we need to reload the file when it changed
--- autocmd { "FocusGained", "TermClose", "TermLeave" }, {
---   group = augroup("checktime"),
---   callback = function()
---     if vim.o.buftype ~= "nofile" then
---       vim.cmd("checktime")
---     end
---   end,
--- })
-
 -- Highlight on Yank
 augroup('YankHighlightedText',{clear=true})
   autocmd('TextYankPost', {
@@ -35,13 +25,13 @@ augroup('YankHighlightedText',{clear=true})
 })
 
 -- Remove whitespace on save
--- autocmd({
---   'BufWritePre',
---   'BufEnter',
---   }, {
---   pattern = '',
---   command = ":%s/\\s\\+$//e"
--- })
+autocmd({
+  'BufWritePre',
+  'BufEnter',
+  }, {
+  pattern = '',
+  command = ":%s/\\s\\+$//e"
+})
 
 -- Don't auto commenting new lines
 autocmd('BufEnter', {
@@ -53,7 +43,9 @@ autocmd('BufEnter', {
 autocmd("BufReadPost", {command="normal! g'\""})
 
 -- Turn off relative numbers to terminal
-autocmd("TermOpen", { command = "setlocal listchars= nonumber norelativenumber" })
+autocmd("TermOpen",{
+  command = "setlocal listchars= nonumber norelativenumber"
+})
 
 -- Turn off relative numbers to oil buffers
 autocmd("FileType", {
@@ -64,70 +56,14 @@ autocmd("FileType", {
   end,
 })
 
--- Turn off relative numbers to oil buffers
-autocmd("BufEnter", {
-  pattern = "",
-  callback = function ()
-    vim.wo.number = true
-    vim.wo.relativenumber = true
-  end,
-})
-
--- close some filetypes with <q>
--- autocmd("FileType", {
---   group = augroup("close_with_q"),
---   pattern = {
---     "PlenaryTestPopup",
---     "checkhealth",
---     "dbout",
---     "gitsigns-blame",
---     "grug-far",
---     "help",
---     "lspinfo",
---     "neotest-output",
---     "neotest-output-panel",
---     "neotest-summary",
---     "notify",
---     "qf",
---     "spectre_panel",
---     "startuptime",
---     "tsplayground",
---   },
---   callback = function(event)
---     vim.bo[event.buf].buflisted = false
---     vim.schedule(function()
---       vim.keymap.set("n", "q", function()
---         vim.cmd("close")
---         pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
---       end, {
---         buffer = event.buf,
---         silent = true,
---         desc = "Quit buffer",
---       })
---     end)
+-- Turn on relative numbers
+-- autocmd("BufEnter", {
+--   callback = function ()
+--     vim.wo.number = true
+--     vim.wo.relativenumber = true
 --   end,
 -- })
 
--- Fix conceallevel for json files
--- autocmd({ "FileType" }, {
---   group = augroup("json_conceal"),
---   pattern = { "json", "jsonc", "json5" },
---   callback = function()
---     vim.opt_local.conceallevel = 0
---   end,
--- })
-
--- Auto create dir when saving a file, in case some intermediate directory does not exist
--- autocmd({ "BufWritePre" }, {
---   group = augroup("auto_create_dir"),
---   callback = function(event)
---     if event.match:match("^%w%w+:[\\/][\\/]") then
---       return
---     end
---     local file = vim.uv.fs_realpath(event.match) or event.match
---     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
---   end,
--- })
 
 --------------------------------------------------
 -- DISABLED --------------------------------------

@@ -14,7 +14,7 @@ set.splitbelow = true
 set.autochdir = true
 set.iskeyword = "@,48-57,192-255"
 set.modifiable = true
-set.guicursor = "n:block,i-ci:hor20,v-ve:ver20"
+set.guicursor = "n:block,i-ci:hor20,v-ve:block"
 
 
 -- Buffer
