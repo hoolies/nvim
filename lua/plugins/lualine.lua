@@ -12,9 +12,9 @@ local config = function()
 			lualine_z = { "location" },
 		},
 		sections = {},
-    depedencies = {
-      "folke/tokyonight.nvim",
-    },
+		depedencies = {
+			"folke/tokyonight.nvim",
+		},
 	})
 end
 
