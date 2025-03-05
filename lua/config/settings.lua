@@ -37,6 +37,7 @@ set.wrapscan = true
 opt.wrap = true
 opt.linebreak = true
 opt.list = false
+set.whichwrap:append "<>[]hl"
 
 
 -- Number column
