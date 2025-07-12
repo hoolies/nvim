@@ -18,6 +18,7 @@ require('config.keymaps')
 require('config.settings')
 
 -- Load Lazy
+ require("lazy").setup('core', opts)
  require("lazy").setup('plugins', opts)
 
 local opts = {
