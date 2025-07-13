@@ -35,16 +35,34 @@ return {
 			-- Telescope picker. This is really useful to discover what Telescope can
 			-- do as well as how to actually do it!
 
+			local actions = require("telescope.actions")
 			-- [[ Configure Telescope ]]
 			-- See `:help telescope` and `:help telescope.setup()`
 			require("telescope").setup({
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
-				--
 				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
+				-- Mapping to do CTRL + J or K to move up and down instead of UP/Down, CTRL + N/P
+				-- 	mappings = {
+				-- 		i = {
+				-- 			["<c-j>"] = {
+				-- 				actions.move_selection_next,
+				-- 				type = "action",
+				-- 				opts = {
+				-- 					nowait = true,
+				-- 					silent = true,
+				-- 				},
+				-- 			},
+				-- 			["<c-k>"] = {
+				-- 				actions.move_selection_previous,
+				-- 				type = "action",
+				-- 				opts = {
+				-- 					nowait = true,
+				-- 					silent = true,
+				-- 				},
+				-- 			},
+				-- 		},
+				-- 	},
 				-- },
 				-- pickers = {}
 				extensions = {
